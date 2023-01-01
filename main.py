@@ -11,6 +11,8 @@ def set_env_variable(env_file_path):
     os.environ['MONGO_DB_URL']=env_config['MONGO_DB_URL']
 if __name__ == '__main__':
     try:
+        env_file_path="/config/workspace/env.yaml"
+        set_env_variable(env_file_path)
         training_pipeline = TrainPipeline()
         training_pipeline.run_pipeline()
     except Exception as e:
